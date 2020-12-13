@@ -5,6 +5,7 @@ pipeline {
             steps {
                 sh 'go version'
 		sh 'go run main.go'
+		sh 'docker build -t "goCode:learningCI"
             }
         }
     }
