@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'go version'
-		sh 'make build'
+                sh '/usr/local/go/bin/go version'
+		sh '/usr/bin/make build'
             }
         }
     }
