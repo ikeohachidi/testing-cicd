@@ -6,8 +6,8 @@ pipeline {
         stage('build') {
             steps {
                 sh 'go version'
-		sh 'sudo docker build -t simplego'
-		sh 'sudo docker run -it -d -p 8765:8765'
+		sh 'docker build -t simplego'
+		sh 'docker run -it -d -p 8765:8765'
             }
         }
     }
