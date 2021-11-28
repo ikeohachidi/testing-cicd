@@ -30,9 +30,3 @@ steps:
 trigger:
   branch:
   - main 
-  ref:
-  - refs/heads/master
-  - refs/heads/**
-  - refs/pull/*/head
-  event:
-  - push
