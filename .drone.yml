@@ -9,3 +9,4 @@ steps:
   commands:
   - echo "Running build"
   - go build -o bin/main
+  - ./bin/main
