@@ -10,3 +10,19 @@ steps:
   - echo "Running build"
   - go build -o bin/main
   - ./bin/main
+
+- name: ssh commands
+  image: appleboy/drone-ssh
+  settings:
+    host:  
+      from_secret: host
+    username: 
+      from_secret: username
+    password: 
+      from_secret: password
+    port: 
+      from_port: port
+    script:
+      - git clone https://github.com/ikeohachidi/testing-ci/cd ~/projects
+      - docker build -t testing-cicd ~/projects
+      - docker run -it -d --restart unless-stopped --name testing-cicd testing-cicd
