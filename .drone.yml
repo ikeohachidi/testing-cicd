@@ -21,8 +21,18 @@ steps:
     password: 
       from_secret: password
     port: 
-      from_port: port
+      from_secret: port
     script:
       - git clone https://github.com/ikeohachidi/testing-ci/cd ~/projects
       - docker build -t testing-cicd ~/projects
       - docker run -it -d --restart unless-stopped --name testing-cicd testing-cicd
+    
+trigger:
+  branch:
+  - main 
+  ref:
+  - refs/heads/master
+  - refs/heads/**
+  - refs/pull/*/head
+  event:
+  - push
