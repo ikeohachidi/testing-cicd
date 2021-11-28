@@ -8,5 +8,4 @@ steps:
   network_mode: host
   commands:
   - echo "Running build"
-  - sh command --build
-  - ./bin/chapi
+  - go build -o bin/main
