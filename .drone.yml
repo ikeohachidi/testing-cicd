@@ -20,8 +20,7 @@ steps:
       from_secret: username
     password: 
       from_secret: password
-    port: 
-      from_secret: port
+    port: 22
     script:
       - git clone https://github.com/ikeohachidi/testing-ci/cd ~/projects
       - docker build -t testing-cicd ~/projects
